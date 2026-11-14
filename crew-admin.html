@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>크루 관리 콘솔 · 오늘러닝</title>
+<meta name="description" content="정기런 관리, QR 출석, 출발 인원 확정, 귀환 확인, 공지, 회비 기록, 운영 리포트까지 크루 운영진을 위한 콘솔.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="크루 관리 콘솔 · 오늘러닝">
+<meta property="og:description" content="정기런 관리, QR 출석, 출발 인원 확정, 귀환 확인, 공지, 회비 기록, 운영 리포트까지 크루 운영진을 위한 콘솔.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="crew-admin" data-nav="crews">
+<main id="main">
+<div class="container">
+  <div class="page-head" style="padding-bottom:18px">
+    <span class="eyebrow">Crew Console</span>
+    <div class="row between wrap"><h1 id="ca-title">크루 관리</h1><select class="select" id="ca-crew" style="width:auto" aria-label="크루 선택"></select></div>
+    <p>운영진이 매번 손으로 하던 일을 줄였어요. 단톡방은 그대로 두고 신청 링크만 공유하세요.</p>
+  </div>
+  <div class="console">
+    <nav class="side" id="side">
+      <div class="title" id="side-title">운영 메뉴</div>
+      <button data-s="dash" class="on">대시보드</button>
+      <button data-s="attendance">출석·귀환 확인</button>
+      <button data-s="meet">모임 관리</button>
+      <button data-s="members">멤버</button>
+      <button data-s="notice">공지·투표</button>
+      <button data-s="dues">회비 기록</button>
+      <button data-s="report">리포트</button>
+    </nav>
+    <div id="panel"></div>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/qrcode/qrcode.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/crew-admin.js"></script>
+</body>
+</html>

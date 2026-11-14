@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>대회 · 오늘러닝</title>
+<meta name="description" content="러닝 대회 일정과 접수 기간을 한눈에 보고, 관심 대회를 저장해 접수 시작과 마감 전에 알림을 받으세요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="대회 · 오늘러닝">
+<meta property="og:description" content="러닝 대회 일정과 접수 기간을 한눈에 보고, 관심 대회를 저장해 접수 시작과 마감 전에 알림을 받으세요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="races" data-nav="races">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Races</span>
+    <h1>대회 캘린더</h1>
+    <p>관심 대회를 저장하면 접수 시작과 마감 사흘 전에 알려 드려요. 대회 정보는 주최 측 공지를 기준으로 하고, 바뀐 내용은 확인일과 함께 표시해요.</p>
+  </div>
+  <div class="filters" id="filters">
+    <select class="select" id="f-region" aria-label="지역"></select>
+    <select class="select" id="f-dist" aria-label="종목"><option value="">모든 종목</option><option>5K</option><option>10K</option><option>하프</option><option>풀</option></select>
+    <select class="select" id="f-status" aria-label="접수 상태"><option value="">모든 상태</option><option>접수 중</option><option>접수 예정</option><option>접수 마감</option></select>
+    <label class="toggle-chip"><input type="checkbox" id="f-saved">관심 대회만</label>
+  </div>
+  <div class="mt24" id="list"></div>
+  <div class="grid c2 mt48">
+    <div class="card soft"><h3>공정한 대회를 위해</h3><ul class="small mt8" style="padding-left:18px;line-height:1.9"><li>배번(참가 번호) 양도·대리 출전은 하지 않아요. 기록과 안전 관리가 모두 틀어져요.</li><li>크루 단체 참가는 주최 측 단체 접수 규정을 따라요.</li><li>코스 위에서 크루 응원은 통행을 막지 않는 곳에서 해요.</li></ul></div>
+    <div class="card soft"><h3>대회 준비 도구</h3><p class="small muted mt8">목표 기록에 맞춘 페이스 밴드를 인쇄하고, 최근 기록으로 완주 시간을 예측해 보세요.</p><div class="row wrap mt12"><a class="btn line sm" href="tools.html#band">페이스 밴드</a><a class="btn line sm" href="tools.html#predict">기록 예측</a></div></div>
+  </div>
+</div>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/races.js"></script>
+</body>
+</html>

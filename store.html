@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>매장 · 오늘러닝</title>
+<meta name="description" content="러닝 인증 혜택, 짐 보관 가능 여부, 영업시간, 시설, 소식과 후기를 확인하세요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="매장 · 오늘러닝">
+<meta property="og:description" content="러닝 인증 혜택, 짐 보관 가능 여부, 영업시간, 시설, 소식과 후기를 확인하세요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="store" data-nav="stores">
+<main id="main">
+<div class="container">
+  <div class="page-head" style="padding-bottom:16px">
+    <a class="small muted" href="stores.html">← 러너 프렌들리 매장</a>
+    <div class="chips mt12" id="st-chips"></div>
+    <h1 id="st-name">매장</h1>
+    <p id="st-sub"></p>
+  </div>
+  <div class="detail">
+    <div class="stack">
+      <div class="card point">
+        <div class="small strong point-text">러닝 인증 혜택</div>
+        <div style="font-size:24px;font-weight:800;color:var(--ink);margin-top:4px" id="st-benefit"></div>
+        <div class="small mt8" id="st-cond"></div>
+      </div>
+      <div class="grid c2">
+        <div class="card"><h3>짐 보관</h3><div class="mt8" id="st-storage"></div></div>
+        <div class="card"><h3>영업시간</h3><div class="mt8" id="st-hours"></div></div>
+      </div>
+      <div class="card"><h3>시설</h3><div class="chips mt8" id="st-amen"></div></div>
+      <div id="st-map" class="map short"></div>
+      <section id="st-news"></section>
+      <section class="card">
+        <div class="row between"><h3>후기 <span class="muted small" id="st-rv-n"></span></h3><button class="btn line sm" id="st-rv-btn">후기 쓰기</button></div>
+        <div id="st-reviews" class="mt8"></div>
+      </section>
+      <section id="st-courses"></section>
+    </div>
+    <aside class="stack sticky">
+      <a class="btn block lg" id="st-verify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg>인증 카드 열기</a>
+      <button class="btn line block" id="st-reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>짐 보관 예약</button>
+      <div class="row"><button class="btn line" id="st-fav" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg>소식 받기</button><a class="btn line" id="st-route" target="_blank" rel="noopener" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>길찾기</a></div>
+      <button class="btn ghost block" id="st-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>공유</button>
+      <div class="card soft small" id="st-crew"></div>
+      <p class="xsmall muted">혜택과 보관 조건은 매장이 정해요. 매장 사정으로 바뀔 수 있어요.</p>
+    </aside>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/store.js"></script>
+</body>
+</html>

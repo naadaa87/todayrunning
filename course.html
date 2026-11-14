@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>코스 · 오늘러닝</title>
+<meta name="description" content="코스 경로, 거리, 오르막, 시설, 장소 규칙을 확인하고 GPX로 내보내거나 이 코스로 모임을 열어 보세요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="코스 · 오늘러닝">
+<meta property="og:description" content="코스 경로, 거리, 오르막, 시설, 장소 규칙을 확인하고 GPX로 내보내거나 이 코스로 모임을 열어 보세요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="course" data-nav="courses">
+<main id="main">
+<div class="container">
+  <div class="page-head" style="padding-bottom:16px">
+    <a class="small muted" href="courses.html">← 코스 찾기</a>
+    <div class="chips mt12" id="k-chips"></div>
+    <h1 id="k-name">코스</h1>
+    <p id="k-sub"></p>
+  </div>
+  <div class="detail">
+    <div class="stack">
+      <div id="k-map" class="map tall"></div>
+      <div class="row wrap small"><label class="toggle-chip"><input type="checkbox" id="lay-fac" checked>시설 표시</label><span class="muted">화장실·AED·보관함·급수대 위치는 예시예요.</span></div>
+      <div id="k-rule"></div>
+      <section id="k-meetups"></section>
+      <section id="k-stores"></section>
+    </div>
+    <aside class="stack sticky">
+      <div class="grid c2" id="k-stats"></div>
+      <div class="card">
+        <h3>예상 시간</h3>
+        <div class="row mt12"><select class="select" id="k-pace" style="width:auto"></select><span class="muted small">페이스로 달리면</span></div>
+        <div class="big-num md mt12" id="k-time" style="text-align:left">0:00</div>
+      </div>
+      <a class="btn block lg" id="k-meet">이 코스로 모임 열기</a>
+      <div class="row"><button class="btn line" id="k-gpx" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>GPX</button><button class="btn line" id="k-share" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>공유</button></div>
+      <a class="btn ghost block" id="k-edit">코스 짜기에서 고치기</a>
+      <p class="xsmall muted">GPX 파일은 가민·코로스·애플워치 앱에서 코스로 불러올 수 있어요. 워치로 바로 보내기는 2단계에 추가돼요.</p>
+    </aside>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/course.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오늘러닝 — 함께 달리는 러닝 플랫폼</title>
+<meta name="description" content="러닝크루와 러너를 위한 러닝 플랫폼. 모임을 찾고 열고, 출석을 확인하고, 다 같이 안전하게 돌아오는 과정까지 한곳에서.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="오늘러닝 — 함께 달리는 러닝 플랫폼">
+<meta property="og:description" content="러닝크루와 러너를 위한 러닝 플랫폼. 모임을 찾고 열고, 출석을 확인하고, 다 같이 안전하게 돌아오는 과정까지 한곳에서.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<main id="main">
+<section class="hero">
+  <svg class="track-art" viewBox="0 0 620 420" aria-hidden="true">
+    <g fill="none" stroke-linecap="round">
+      <path d="M40 420 C40 200 210 60 620 60" stroke="#F8C7BA" stroke-width="2"/>
+      <path d="M90 420 C90 236 240 110 620 110" stroke="#F8C7BA" stroke-width="2"/>
+      <path d="M140 420 C140 272 270 160 620 160" stroke="#E8452C" stroke-width="5"/>
+      <path d="M190 420 C190 308 300 210 620 210" stroke="#F8C7BA" stroke-width="2"/>
+      <path d="M240 420 C240 344 330 260 620 260" stroke="#F8C7BA" stroke-width="2"/>
+    </g>
+    <circle cx="140" cy="420" r="9" fill="#E8452C"/>
+  </svg>
+  <div class="container">
+    <div>
+      <span class="eyebrow">RUN TOGETHER, SAFELY</span>
+      <h1>오늘 같이 달릴<br>사람과 코스를<br><em>한곳에서</em></h1>
+      <p class="lead">모임을 찾고, 크루를 운영하고, 출석부터 귀가까지 챙기는 러닝 플랫폼이에요. 달린 뒤에는 근처 러너 프렌들리 매장에서 인증 할인도 받으세요.</p>
+      <div class="cta">
+        <a class="btn lg" href="meetups.html">내 주변 모임 찾기</a>
+        <a class="btn lg outline" href="crew-admin.html">크루 운영 시작하기</a>
+      </div>
+      <div class="facts"><span><b>서울·경기·부산</b> 크루부터</span><span><b>모든 기능 무료</b></span><span><b>앱 설치 없이</b> 웹으로 신청</span></div>
+    </div>
+    <div class="hero-panel">
+      <div class="head"><b>오늘의 달리기 조건</b>
+        <div class="seg" id="wx-region"><button class="on" data-r="yeouido">서울</button><button data-r="gwanggyo">경기</button><button data-r="gwangalli">부산</button></div>
+      </div>
+      <div id="wx-home"></div>
+      <hr style="margin:18px 0 14px">
+      <div class="row between mb8"><b class="strong">곧 열리는 모임</b><a class="small muted" href="meetups.html">전체 보기</a></div>
+      <div id="soon" class="list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><h2>이번 주 모임</h2><a class="more" href="meetups.html">모임 모두 보기 →</a></div>
+    <div class="grid c3" id="week-meetups"></div>
+  </div>
+</section>
+
+<section class="section band" style="padding:56px 0">
+  <div class="container">
+    <div class="section-title"><div><h2>달리기 전부터 집에 갈 때까지</h2><p class="muted mt8">흩어져 있던 도구를 한곳에 모았어요. 기록은 쓰던 워치와 건강 앱에 그대로 두고, 오늘러닝은 같이 달리는 일을 챙깁니다.</p></div></div>
+    <div class="feature-grid">
+      <a class="feature" href="meetups.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.2 3.2 0 010 6.2M21 20c0-2.6-1.6-4.8-4-5.6"/></svg></span><h3>모임 찾기·만들기</h3><p>페이스·지역·요일로 맞는 모임을 찾고, 정기런과 번개런을 몇 번의 클릭으로 엽니다.</p></a>
+      <a class="feature" href="crew-admin.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span><h3>크루 운영 콘솔</h3><p>QR 출석, 출발 인원 확정, 귀환 확인, 공지와 회비 기록까지 운영진 일을 덜어 줘요.</p></a>
+      <a class="feature" href="course-builder.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 000-6H9a3 3 0 010-6h6.5"/></svg></span><h3>코스 짜기</h3><p>지도에서 코스를 그리고 화장실·AED·보관함과 장소 규칙을 함께 확인해요.</p></a>
+      <a class="feature" href="tools.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4M12 2v3"/></svg></span><h3>러닝 도구</h3><p>스톱워치, 인터벌, 페이스 계산기, 페이스 밴드, 메트로놈, 나침반까지 웹에서 바로.</p></a>
+      <a class="feature" href="run.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>귀가 공유·SOS</h3><p>혼자 달릴 때 가족에게 위치 링크를 보내고, 위급할 땐 위치를 담아 바로 연락해요.</p></a>
+      <a class="feature" href="stores.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v5a6 6 0 01-6 6h-1a6 6 0 01-6-6V8z"/><path d="M17 10h1.5a2.5 2.5 0 010 5H17M8 3v2M12 3v2"/></svg></span><h3>러너 프렌들리 매장</h3><p>달린 기록을 보여 주면 음료 할인, 가방은 맡기고 가볍게. 지금 보관 가능한 곳을 찾아요.</p></a>
+      <a class="feature" href="races.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></span><h3>대회 캘린더</h3><p>관심 대회를 저장하면 접수 시작과 마감 전에 알려 드려요.</p></a>
+      <a class="feature" href="mypage.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><h3>마이페이지</h3><p>내 모임·크루·코스·기록과 자주 쓰는 도구, 안전 설정을 어디서든 그대로.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding:56px 0">
+  <div class="container">
+    <div class="grid c2" style="gap:40px;align-items:center">
+      <div>
+        <span class="chip point">러너 프렌들리 매장</span>
+        <h2 class="mt12" style="font-size:30px">가방은 맡기고,<br>달린 뒤엔 할인받고</h2>
+        <p class="mt16">한강, 서울숲, 석촌호수, 광안리, 해운대 근처에 러너를 반기는 카페와 러닝 용품 매장이 늘고 있어요. 오늘러닝에서 지금 짐을 맡길 수 있는 곳을 찾고, 그날 달린 기록으로 바로 인증하세요.</p>
+        <ul class="stack mt16" style="list-style:none">
+          <li class="row"><span class="ico good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></span><div><b class="strong">지금 보관 가능한 곳만 보기</b><div class="small muted">매장이 직접 켜 둔 남은 자리 수를 보여 줘요.</div></div></li>
+          <li class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg></span><div><b class="strong">오늘의 러닝 인증 카드</b><div class="small muted">30초마다 바뀌는 QR로 캡처 재사용을 막아요.</div></div></li>
+          <li class="row"><span class="ico gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v2a3 3 0 01-5.3 2A3 3 0 0112 14a3 3 0 01-2.7-1A3 3 0 014 11V9z"/><path d="M5 14v6h14v-6"/></svg></span><div><b class="strong">매장 입점은 무료</b><div class="small muted">노출 순서는 거리·영업 여부·보관 가능 여부·러너 평가로 정해요.</div></div></li>
+        </ul>
+        <div class="row wrap mt24"><a class="btn" href="stores.html">매장 찾기</a><a class="btn line" href="partner.html">매장 입점 안내</a></div>
+      </div>
+      <div class="stack" id="home-stores"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-point" style="padding:56px 0">
+  <div class="container">
+    <div class="section-title"><div><h2>함께 달리기 원칙</h2><p class="mt8" style="color:var(--text)">크루가 공원과 길에서 계속 환영받도록, 오늘러닝의 모임은 이 일곱 가지를 기본으로 합니다.</p></div><a class="more" href="guide.html#principles">자세히 →</a></div>
+    <ol class="principles" id="home-principles"></ol>
+  </div>
+</section>
+
+<section class="section" style="padding:56px 0">
+  <div class="container">
+    <div class="section-title"><div><h2>크루장이라면, 이렇게 시작하세요</h2><p class="muted mt8">단톡방과 밴드는 그대로 두세요. 신청 링크만 붙이면 됩니다.</p></div></div>
+    <ol class="steps">
+      <li><b>크루 페이지 만들기</b><span>소개, 정기 일정, 페이스, 분위기를 미리 보여 주면 처음 오는 사람이 편해요.</span></li>
+      <li><b>정기런 한 번에 등록</b><span>반복 일정과 페이스 그룹 정원을 정하면 5명 이하 소그룹이 자동으로 나뉘어요.</span></li>
+      <li><b>QR로 출석, 출발 인원 확정</b><span>30초마다 바뀌는 코드로 출석을 받고 그룹별 출발 인원을 확인해요.</span></li>
+      <li><b>귀환 확인과 리포트</b><span>모두 돌아왔는지 확인하고, 출석·노쇼 통계로 다음 모임을 준비해요.</span></li>
+    </ol>
+    <div class="row wrap mt24"><a class="btn dark" href="crew-admin.html">크루 관리 콘솔 보기</a><a class="btn line" href="meetup-new.html">모임 만들기</a></div>
+  </div>
+</section>
+
+<section class="section band" style="padding:48px 0">
+  <div class="container">
+    <div class="grid c3">
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><h3 class="mt12">날씨 기준은 미리</h3><p class="small muted mt8">폭염·미세먼지·강풍 기준을 넘으면 운영진에게 먼저 알려요. 결정은 운영진이, 기록은 오늘러닝이.</p><a class="small point-text mt12" style="display:inline-block" href="guide.html#weather">운영 기준 보기 →</a></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.2 3.2 0 010 6.2M21 20c0-2.6-1.6-4.8-4-5.6"/></svg></span><h3 class="mt12">모두 돌아왔나요?</h3><p class="small muted mt8">출발 인원과 귀환 인원을 맞춰 보고, 돌아오지 않은 사람에게 바로 연락할 수 있어요.</p><a class="small point-text mt12" style="display:inline-block" href="crew-admin.html#attendance">출석·귀환 확인 →</a></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span><h3 class="mt12">처음이라면 입문 프로그램</h3><p class="small muted mt8">걷기와 달리기를 섞어 8주 만에 30분 달리기. 입문 환영 모임과 함께 시작해요.</p><a class="small point-text mt12" style="display:inline-block" href="guide.html#beginner">8주 프로그램 →</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/home.js"></script>
+</body>
+</html>

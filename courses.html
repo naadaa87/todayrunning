@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>코스 찾기 · 오늘러닝</title>
+<meta name="description" content="지역 대표 러닝 코스를 거리, 형태, 야간 조명, 시설과 장소 규칙까지 함께 확인하세요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="코스 찾기 · 오늘러닝">
+<meta property="og:description" content="지역 대표 러닝 코스를 거리, 형태, 야간 조명, 시설과 장소 규칙까지 함께 확인하세요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="courses" data-nav="courses">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Courses</span>
+    <h1>코스 찾기</h1>
+    <p>거리와 오르막, 화장실·AED·보관함, 그리고 장소 규칙을 한 번에 보세요. 마음에 드는 코스로 바로 모임을 열 수 있어요.</p>
+    <div class="row wrap"><a class="btn" href="course-builder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 000-6H9a3 3 0 010-6h6.5"/></svg>코스 짜기</a></div>
+  </div>
+  <div class="filters" id="filters">
+    <select class="select" id="f-region" aria-label="지역"></select>
+    <select class="select" id="f-type" aria-label="형태"><option value="">모든 형태</option><option>순환</option><option>왕복</option></select>
+    <select class="select" id="f-dist" aria-label="거리"><option value="">모든 거리</option><option value="0-3">3km 이하</option><option value="3-5">3~5km</option><option value="5-99">5km 이상</option></select>
+    <label class="toggle-chip"><input type="checkbox" id="f-night">야간 조명</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-locker">보관함</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-mine">내 코스</label>
+  </div>
+  <div class="split mt24">
+    <div class="scroll" id="list"></div>
+    <div><div id="map" class="map tall"></div><p class="xsmall muted mt8">경로는 예시예요. 실제 길과 다를 수 있어요.</p></div>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/courses.js"></script>
+</body>
+</html>

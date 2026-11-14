@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>모임 만들기 · 오늘러닝</title>
+<meta name="description" content="정기런, 번개런, 입문 환영런을 열어 보세요. 페이스 그룹과 정원을 정하면 5명 이하 소그룹으로 자동 편성돼요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="모임 만들기 · 오늘러닝">
+<meta property="og:description" content="정기런, 번개런, 입문 환영런을 열어 보세요. 페이스 그룹과 정원을 정하면 5명 이하 소그룹으로 자동 편성돼요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="meetup-new" data-nav="meetups">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <a class="small muted" href="meetups.html">← 모임 찾기</a>
+    <h1 class="mt8">모임 만들기</h1>
+    <p>정기런은 요일을 고르면 매주 자동으로 열려요. 신청 링크를 단톡방이나 밴드에 붙이면 앱 없이도 신청할 수 있어요.</p>
+  </div>
+  <div class="detail">
+    <form id="form" class="stack" novalidate>
+      <section class="card">
+        <h3 class="mb16">기본 정보</h3>
+        <label class="field"><span>모임 이름</span><input class="input" id="title" maxlength="30" placeholder="예: 화요 정기런 7km" required></label>
+        <div class="field"><span class="label">종류</span>
+          <div class="seg" id="kind"><button type="button" class="on" data-v="정기">정기런</button><button type="button" data-v="번개">번개런</button><button type="button" data-v="입문">입문 환영런</button><button type="button" data-v="게스트">게스트런</button></div></div>
+        <div class="form-grid mt16">
+          <label class="field"><span>운영</span><select class="select" id="crew"></select><small>크루 이름으로 열면 크루 페이지에도 보여요.</small></label>
+          <label class="field"><span>수준</span><select class="select" id="level"><option>입문</option><option selected>초중급</option><option>중급</option><option>중상급</option></select></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3 class="mb16">언제</h3>
+        <div id="repeat-box" class="field"><span class="label">매주 반복할 요일</span>
+          <div class="row wrap" id="weekdays"></div><small>고른 요일마다 모임이 하나씩 만들어져요.</small></div>
+        <div class="form-grid mt16">
+          <label class="field" id="date-field"><span>날짜</span><input class="input" type="date" id="date"></label>
+          <label class="field"><span>시간</span><input class="input" type="time" id="time" value="19:30"></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3 class="mb16">어디서</h3>
+        <div class="form-grid">
+          <label class="field"><span>지역</span><select class="select" id="region"></select></label>
+          <label class="field"><span>장소</span><select class="select" id="hub"></select></label>
+          <label class="field full"><span>집결 장소</span><input class="input" id="place" placeholder="예: 여의나루역 2번 출구 앞 광장"></label>
+          <label class="field"><span>코스</span><select class="select" id="course"></select><small><a class="point-text" href="course-builder.html">코스 직접 그리기 →</a></small></label>
+          <label class="field"><span>거리(km)</span><input class="input" type="number" id="distance" min="1" max="50" step="0.1" value="5"></label>
+        </div>
+        <div id="rule-warn" class="mt16"></div>
+      </section>
+
+      <section class="card">
+        <div class="row between mb12"><h3>페이스 그룹</h3><button type="button" class="btn line sm" id="add-group"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>그룹 추가</button></div>
+        <div id="groups"></div>
+        <div id="split-info" class="mt16"></div>
+        <div class="row wrap mt16">
+          <label class="check"><input type="checkbox" id="beginner" checked><span>입문 환영</span></label>
+          <label class="check"><input type="checkbox" id="guest" checked><span>크루원이 아니어도 참가 가능</span></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3 class="mb12">안내문</h3>
+        <textarea class="textarea" id="note" rows="4"></textarea>
+        <p class="xsmall muted mt8">참가자는 신청할 때 함께 달리기 원칙과 안전 수칙 확인에 동의해요.</p>
+      </section>
+
+      <div class="row wrap"><button class="btn lg" type="submit">모임 열기</button><a class="btn lg line" href="meetups.html">취소</a></div>
+    </form>
+
+    <aside class="stack sticky">
+      <div class="small strong">미리보기</div>
+      <div id="preview"></div>
+      <div class="card" id="wx"><div class="small muted">날짜와 장소를 고르면 그 시각 날씨 기준을 미리 확인해 드려요(3일 안 일정).</div></div>
+    </aside>
+  </div>
+</div>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/meetup-new.js"></script>
+</body>
+</html>

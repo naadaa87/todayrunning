@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>크루 찾기 · 오늘러닝</title>
+<meta name="description" content="서울·경기·부산의 러닝크루를 지역, 요일, 분위기로 찾아보세요. 크루 페이지에서 정기 일정과 페이스를 미리 확인할 수 있어요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="크루 찾기 · 오늘러닝">
+<meta property="og:description" content="서울·경기·부산의 러닝크루를 지역, 요일, 분위기로 찾아보세요. 크루 페이지에서 정기 일정과 페이스를 미리 확인할 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="crews" data-nav="crews">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Crews</span>
+    <h1>크루 찾기</h1>
+    <p>정기 일정, 페이스, 분위기를 보고 나와 맞는 크루를 골라 보세요. 크루 대부분은 게스트런으로 먼저 함께 달려 볼 수 있어요.</p>
+    <div class="row wrap"><button class="btn" id="btn-new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>크루 만들기</button><a class="btn line" href="crew-admin.html">크루 관리 콘솔</a></div>
+  </div>
+  <div class="filters" id="filters">
+    <select class="select" id="f-region" aria-label="지역"></select>
+    <label class="toggle-chip"><input type="checkbox" id="f-beginner">입문 환영</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-manner">매너 크루</label>
+    <select class="select" id="f-time" aria-label="시간대"><option value="">모든 시간대</option><option value="dawn">새벽·아침</option><option value="night">평일 저녁</option><option value="weekend">주말</option></select>
+    <input class="input grow" id="f-q" type="search" placeholder="크루 이름이나 장소">
+  </div>
+  <div class="strong mt24 mb16" id="count"></div>
+  <div class="grid c3" id="list"></div>
+
+  <div class="card soft mt48">
+    <div class="row wrap" style="gap:20px">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div style="flex:1;min-width:240px"><h3>매너 크루 인증</h3><p class="small muted mt8">함께 달리기 원칙을 지키고, 6명 이상 모임을 소그룹으로 운영하며, 최근 석 달 동안 매너 위반 신고가 없는 크루에 붙는 표시예요.</p></div>
+      <a class="btn line" href="guide.html#principles">원칙 보기</a>
+    </div>
+  </div>
+</div>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/crews.js"></script>
+</body>
+</html>

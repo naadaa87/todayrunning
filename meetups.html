@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>모임 찾기 · 오늘러닝</title>
+<meta name="description" content="페이스, 지역, 요일, 거리로 나에게 맞는 러닝 모임을 찾아보세요. 앱 설치 없이 웹에서 바로 신청할 수 있어요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="모임 찾기 · 오늘러닝">
+<meta property="og:description" content="페이스, 지역, 요일, 거리로 나에게 맞는 러닝 모임을 찾아보세요. 앱 설치 없이 웹에서 바로 신청할 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="meetups" data-nav="meetups">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Meetups</span>
+    <h1>모임 찾기</h1>
+    <p>페이스와 분위기를 미리 보고 고르세요. 처음이라면 ‘입문 환영’ 모임부터 시작하면 좋아요.</p>
+    <div class="row wrap"><a class="btn" href="meetup-new.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>모임 만들기</a><a class="btn line" href="crews.html">크루 찾기</a></div>
+  </div>
+
+  <div class="filters" id="filters">
+    <select class="select" id="f-region" aria-label="지역"></select>
+    <select class="select" id="f-hub" aria-label="장소"></select>
+    <select class="select" id="f-when" aria-label="언제">
+      <option value="">언제든</option><option value="today">오늘</option><option value="tomorrow">내일</option><option value="week">7일 안</option><option value="weekend">이번 주말</option><option value="morning">아침(10시 전)</option><option value="evening">저녁(18시 후)</option>
+    </select>
+    <select class="select" id="f-pace" aria-label="페이스">
+      <option value="">모든 페이스</option><option value="330">5'30" 이하도 OK</option><option value="390">6'30" 정도</option><option value="450">7'30" 정도</option><option value="510">8'00" 이상 천천히</option>
+    </select>
+    <select class="select" id="f-dist" aria-label="거리">
+      <option value="">모든 거리</option><option value="0-5">5km 이하</option><option value="5-10">5~10km</option><option value="10-99">10km 이상</option>
+    </select>
+    <label class="toggle-chip"><input type="checkbox" id="f-beginner">입문 환영</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-guest">게스트 가능</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-open">자리 있음</label>
+    <input class="input grow" id="f-q" type="search" placeholder="모임·크루·장소 이름으로 찾기">
+  </div>
+
+  <div class="row between mt24 mb16 wrap">
+    <div class="strong" id="count"></div>
+    <div class="seg" id="view"><button class="on" data-v="list">목록</button><button data-v="map">지도</button></div>
+  </div>
+
+  <div id="list" class="grid c3"></div>
+  <div id="mapwrap" class="hide"><div id="map" class="map tall"></div><p class="xsmall muted mt8">핀 숫자는 그 장소의 모임 수예요. 위치는 예시입니다.</p></div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/meetups.js"></script>
+</body>
+</html>

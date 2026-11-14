@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>러너 프렌들리 매장 · 오늘러닝</title>
+<meta name="description" content="러닝 인증 할인과 짐 보관을 하는 카페·러닝 용품 매장을 찾아보세요. 지금 짐을 맡길 수 있는 곳만 골라 볼 수 있어요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="러너 프렌들리 매장 · 오늘러닝">
+<meta property="og:description" content="러닝 인증 할인과 짐 보관을 하는 카페·러닝 용품 매장을 찾아보세요. 지금 짐을 맡길 수 있는 곳만 골라 볼 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="stores" data-nav="stores">
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Runner-friendly Stores</span>
+    <h1>러너 프렌들리 매장</h1>
+    <p>달리기 전에 가방을 맡기고, 달린 뒤에는 오늘의 러닝 인증 카드로 할인을 받으세요. 노출 순서는 거리·영업 여부·보관 가능 여부·러너 평가로만 정해요.</p>
+    <div class="row wrap"><a class="btn" href="verify.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg>오늘의 러닝 인증 카드</a><a class="btn line" href="partner.html">우리 매장 입점하기</a></div>
+  </div>
+  <div class="filters" id="filters">
+    <select class="select" id="f-region" aria-label="지역"></select>
+    <select class="select" id="f-hub" aria-label="장소"></select>
+    <label class="toggle-chip"><input type="checkbox" id="f-storage">지금 보관 가능</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-open">영업 중</label>
+    <label class="toggle-chip"><input type="checkbox" id="f-shower">샤워·탈의실</label>
+    <select class="select" id="f-type" aria-label="종류"><option value="">모든 매장</option><option>카페</option><option>러닝 용품</option></select>
+    <button class="btn line sm" id="near"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>내 주변</button>
+  </div>
+  <div class="split mt24">
+    <div class="scroll" id="list"></div>
+    <div><div id="map" class="map tall"></div><p class="xsmall muted mt8">초록 핀은 지금 짐을 맡길 수 있는 곳이에요. 위치는 예시입니다.</p></div>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/stores.js"></script>
+</body>
+</html>

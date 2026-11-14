@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>코스 짜기 · 오늘러닝</title>
+<meta name="description" content="지도를 눌러 러닝 코스를 그리고 거리와 예상 시간, 근처 시설과 장소 규칙을 확인하세요. GPX로 내보내 워치에서 쓸 수 있어요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="코스 짜기 · 오늘러닝">
+<meta property="og:description" content="지도를 눌러 러닝 코스를 그리고 거리와 예상 시간, 근처 시설과 장소 규칙을 확인하세요. GPX로 내보내 워치에서 쓸 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="course-builder" data-nav="courses">
+<main id="main">
+<div class="container">
+  <div class="page-head" style="padding-bottom:18px">
+    <a class="small muted" href="courses.html">← 코스 찾기</a>
+    <h1 class="mt8">코스 짜기</h1>
+    <p>지도를 눌러 지점을 찍으면 코스가 그려져요. 지점을 끌어서 옮길 수도 있어요.</p>
+  </div>
+  <div class="detail" style="grid-template-columns:minmax(0,1fr) 340px">
+    <div>
+      <div class="filters mb12" style="padding:10px 12px">
+        <select class="select" id="jump" aria-label="장소로 이동"></select>
+        <button class="btn line sm" id="b-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>내 위치</button>
+        <button class="btn line sm" id="b-undo">되돌리기</button>
+        <button class="btn line sm" id="b-loop">순환으로 닫기</button>
+        <button class="btn line sm" id="b-back">왕복 만들기</button>
+        <button class="btn ghost sm" id="b-clear"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>모두 지우기</button>
+      </div>
+      <div id="map" class="map tall" style="cursor:crosshair"></div>
+      <div class="row wrap small mt8"><label class="toggle-chip"><input type="checkbox" id="lay-fac" checked>시설 표시</label><span class="muted">지점이 많은 GPX를 불러오면 지점 표시는 숨겨져요.</span></div>
+    </div>
+    <aside class="stack sticky">
+      <div class="card">
+        <label class="field"><span>코스 이름</span><input class="input" id="name" maxlength="30" placeholder="예: 우리 동네 아침 5km"></label>
+        <div class="grid c2 mt16">
+          <div class="stat"><div class="k">거리</div><div class="v" id="s-km">0.00<small>km</small></div></div>
+          <div class="stat"><div class="k">형태</div><div class="v" id="s-type" style="font-size:22px">-</div></div>
+        </div>
+        <div class="row mt12"><select class="select sm" id="pace" style="width:auto"></select><span class="small muted">로 달리면</span><b class="strong" id="s-time">0:00</b></div>
+        <div id="s-near" class="small mt12"></div>
+      </div>
+      <button class="btn block lg" id="b-save">내 코스로 저장</button>
+      <div class="row"><button class="btn line" id="b-gpx" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>GPX 내보내기</button><label class="btn line" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>GPX 불러오기<input type="file" id="f-gpx" accept=".gpx,application/gpx+xml" hidden></label></div>
+      <a class="btn ghost block hide" id="b-meet">이 코스로 모임 열기</a>
+      <p class="xsmall muted">저장한 코스는 마이페이지 ‘내 코스’와 코스 찾기에 보여요. 시범 버전에서는 이 브라우저에만 저장돼요.</p>
+    </aside>
+  </div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/course-builder.js"></script>
+</body>
+</html>

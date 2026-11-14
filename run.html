@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>달리기 · 오늘러닝</title>
+<meta name="description" content="GPS로 거리·페이스·시간을 기록하고, 1km마다 음성으로 알려 줘요. 혼자 달릴 땐 귀가 공유와 SOS로 안전하게.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="달리기 · 오늘러닝">
+<meta property="og:description" content="GPS로 거리·페이스·시간을 기록하고, 1km마다 음성으로 알려 줘요. 혼자 달릴 땐 귀가 공유와 SOS로 안전하게.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="run">
+<main id="main">
+<div class="container narrow">
+  <div class="page-head" style="padding-bottom:16px">
+    <span class="eyebrow">Run</span>
+    <h1>달리기</h1>
+    <p>휴대폰 브라우저에서 GPS로 기록해요. 화면을 켜 둔 채로 달리면 더 정확해요. 정식 앱에서는 화면이 꺼져도 기록돼요.</p>
+  </div>
+
+  <section class="run-screen">
+    <div class="row between"><span class="strong" id="r-mode" style="color:#fff">자유 달리기</span><span class="small" id="r-gps" style="color:#A9AEB5">GPS 대기</span></div>
+    <div class="center mt24"><div class="small muted">지금 페이스 /km</div><div class="big-num" id="r-pace">--'--"</div></div>
+    <div class="run-stats">
+      <div><b id="r-dist">0.00</b><span>거리 km</span></div>
+      <div><b id="r-time">0:00</b><span>시간</span></div>
+      <div><b id="r-avg">--'--"</b><span>평균 페이스</span></div>
+    </div>
+    <div class="small mt12" id="r-splits" style="color:#D5D8DC;min-height:20px"></div>
+    <div class="grid c2 mt16" id="r-btns">
+      <button class="btn lg" id="r-start" style="grid-column:span 2">시작</button>
+    </div>
+    <button class="btn block sos mt12" id="r-sos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg>SOS · 위급할 때</button>
+    <div class="row wrap mt16 small" style="color:#A9AEB5">
+      <label class="check"><input type="checkbox" id="o-voice" checked><span>1km마다 음성 안내</span></label>
+      <label class="check"><input type="checkbox" id="o-wake" checked><span>화면 켜 두기</span></label>
+    </div>
+    <p class="xsmall mt8" style="color:#7D838B">GPS가 없는 컴퓨터라면 <button class="btn ghost sm" id="r-demo" style="color:#FF8A73;padding:0 4px;height:auto">체험 모드</button>로 둘러보세요.</p>
+  </section>
+
+  <div id="r-map" class="map short mt16 hide"></div>
+
+  <section class="card mt24" id="share">
+    <div class="row between wrap"><div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3>귀가 공유</h3><p class="small muted">혼자 달릴 때 가족이나 친구에게 내 위치와 도착 예정 시간을 보내요.</p></div></div><span class="chip" id="sh-state">꺼짐</span></div>
+    <div class="form-grid mt16" id="sh-form">
+      <label class="field"><span>받는 사람</span><select class="select" id="sh-to"></select></label>
+      <label class="field"><span>도착 예정</span><select class="select" id="sh-eta"><option value="30">30분 뒤</option><option value="45" selected>45분 뒤</option><option value="60">1시간 뒤</option><option value="90">1시간 30분 뒤</option></select></label>
+    </div>
+    <div class="row wrap mt16" id="sh-actions"><button class="btn" id="sh-on">귀가 공유 켜기</button><a class="small muted" href="mypage.html#safety">받는 사람·집 주변 감추기 설정 →</a></div>
+    <div class="notice gray small mt16">시범 버전은 서버 없이 동작해서, 링크를 보낸 순간의 위치만 전달돼요. 정식 버전에서는 공유하는 동안 위치가 실시간으로 바뀌고, 도착하면 자동으로 알리며, 예정 시간이 지나도 도착하지 않으면 받는 사람에게 먼저 알려요.</div>
+  </section>
+
+  <section class="card mt16">
+    <div class="row between wrap"><div><h3>기록 직접 입력</h3><p class="small muted">워치로 달렸거나 트레드밀에서 달렸다면 직접 적어 두세요. 직접 입력한 기록은 ‘수기’로 표시돼요.</p></div><button class="btn line" id="manual">기록 입력</button></div>
+  </section>
+  <div class="row wrap mt16"><a class="btn line" href="mypage.html#records">내 기록 보기</a><a class="btn line" href="verify.html">오늘의 러닝 인증 카드</a></div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/run.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>귀가 공유 · 오늘러닝</title>
+<meta name="description" content="가족이나 친구가 보낸 귀가 공유 링크예요. 앱 없이 위치와 도착 예정 시간을 확인할 수 있어요.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="귀가 공유 · 오늘러닝">
+<meta property="og:description" content="가족이나 친구가 보낸 귀가 공유 링크예요. 앱 없이 위치와 도착 예정 시간을 확인할 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="share" data-demo="off">
+<main id="main">
+<div class="container narrow">
+  <div class="page-head" style="padding-bottom:16px">
+    <span class="eyebrow">Home Share</span>
+    <h1 id="sh-title">귀가 공유</h1>
+    <p id="sh-sub">앱을 설치하지 않아도 볼 수 있어요.</p>
+  </div>
+  <div id="sh-status"></div>
+  <div id="sh-map" class="map mt16"></div>
+  <div class="grid c3 mt16" id="sh-stats"></div>
+  <div class="notice gray small mt16">시범 버전 링크라 보낸 사람이 링크를 만든 순간의 위치만 보여요. 정식 버전에서는 공유가 켜져 있는 동안 위치가 실시간으로 바뀌고, 공유가 끝나면 자동으로 볼 수 없게 돼요.</div>
+  <div class="card soft mt16"><h3>연락이 닿지 않으면</h3><p class="small mt8">예정 시간이 한참 지났는데 전화를 받지 않으면 마지막 위치 근처를 확인하고, 위급하다고 판단되면 119나 112에 신고하세요.</p><div class="row wrap mt12"><a class="btn danger" href="tel:119">119</a><a class="btn dark" href="tel:112">112</a></div></div>
+</div>
+</main>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/share.js"></script>
+</body>
+</html>
